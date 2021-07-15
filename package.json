@@ -5,10 +5,17 @@
   "author": "Gerson <gersonmigueis10@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
+    "start": "node dist/server.js",
     "dev": "ts-node-dev src/server.ts -r tsconfig-paths/register --respawn --transpileOnly --ignore-watch node_modules --no-notify",
     "test": "jest"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/node": "^7.14.7",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-typescript": "^7.14.5",
     "@types/express": "^4.17.12",
     "@types/jest": "^26.0.23",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
@@ -25,6 +32,8 @@
     "typescript": "^4.3.2"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "babel-plugin-module-resolver": "^4.1.0",
+    "express": "^4.17.1",
+    "yarn": "^1.22.10"
   }
 }
